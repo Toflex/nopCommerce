@@ -1302,6 +1302,7 @@ namespace Nop.Web.Areas.Admin.Factories
                     var gdprConsentModel = consent.ToModel<GdprConsentModel>();
                     var gdprConsent = _gdprService.GetConsentById(gdprConsentModel.Id);
                     gdprConsentModel.Message = gdprConsent.GetLocalized(entity => entity.Message);
+                    gdprConsentModel.RequiredMessage = gdprConsent.GetLocalized(entity => entity.Message);
 
                     return gdprConsentModel;
                 }),
@@ -1331,6 +1332,7 @@ namespace Nop.Web.Areas.Admin.Factories
                 localizedModelConfiguration = (locale, languageId) =>
                 {
                     locale.Message = gdprConsent.GetLocalized(entity => entity.Message, languageId, false, false);
+                    locale.RequiredMessage = gdprConsent.GetLocalized(entity => entity.RequiredMessage, languageId, false, false);
                 };
             }
 

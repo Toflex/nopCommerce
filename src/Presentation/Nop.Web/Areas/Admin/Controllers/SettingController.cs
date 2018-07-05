@@ -124,6 +124,11 @@ namespace Nop.Web.Areas.Admin.Controllers
                     x => x.Message,
                     localized.Message,
                     localized.LanguageId);
+
+                _localizedEntityService.SaveLocalizedValue(gdprConsent,
+                    x => x.RequiredMessage,
+                    localized.RequiredMessage,
+                    localized.LanguageId);
             }
         }
 

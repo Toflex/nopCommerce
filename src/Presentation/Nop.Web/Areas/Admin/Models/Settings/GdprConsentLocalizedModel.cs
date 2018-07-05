@@ -12,5 +12,8 @@ namespace Nop.Web.Areas.Admin.Models.Settings
 
         [NopResourceDisplayName("Admin.Configuration.Settings.Gdpr.Consent.Message")]
         public string Message { get; set; }
+
+        [NopResourceDisplayName("Admin.Configuration.Settings.Gdpr.Consent.RequiredMessage")]
+        public string RequiredMessage { get; set; }
     }
 }

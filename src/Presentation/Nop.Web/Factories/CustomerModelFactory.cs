@@ -157,9 +157,9 @@ namespace Nop.Web.Factories
             return new GdprConsentModel
             {
                 Id = consent.Id,
-                Message = consent.Message,
+                Message = consent.GetLocalized(x => x.Message),
                 IsRequired = consent.IsRequired,
-                RequiredMessage = !String.IsNullOrEmpty(consent.RequiredMessage) ? consent.RequiredMessage : $"'{consent.Message}' is required",
+                RequiredMessage = !String.IsNullOrEmpty(consent.GetLocalized(x => x.RequiredMessage)) ? consent.GetLocalized(x => x.RequiredMessage) : $"'{consent.Message}' is required",
                 Accepted = accepted
             };
         }
