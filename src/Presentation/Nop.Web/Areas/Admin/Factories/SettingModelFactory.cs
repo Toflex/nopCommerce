@@ -1302,7 +1302,7 @@ namespace Nop.Web.Areas.Admin.Factories
                     var gdprConsentModel = consent.ToModel<GdprConsentModel>();
                     var gdprConsent = _gdprService.GetConsentById(gdprConsentModel.Id);
                     gdprConsentModel.Message = gdprConsent.GetLocalized(entity => entity.Message);
-                    gdprConsentModel.RequiredMessage = gdprConsent.GetLocalized(entity => entity.Message);
+                    gdprConsentModel.RequiredMessage = gdprConsent.GetLocalized(entity => entity.RequiredMessage);
 
                     return gdprConsentModel;
                 }),
