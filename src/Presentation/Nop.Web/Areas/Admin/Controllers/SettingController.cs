@@ -1112,6 +1112,9 @@ namespace Nop.Web.Areas.Admin.Controllers
                 gdprConsent = model.ToEntity(gdprConsent);
                 _gdprService.UpdateConsent(gdprConsent);
 
+                //selected tab
+                SaveSelectedTabName();
+
                 //locales                
                 UpdateGDPRConsentLocales(gdprConsent, model);
 
